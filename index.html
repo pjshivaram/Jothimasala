@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jothi Masala - Premium Authentic Indian Spices &amp; Masalas</title>
+    <style>
+        :root {
+          /* Primitive Color Tokens */
+          --color-white: rgba(255, 255, 255, 1);
+          --color-black: rgba(0, 0, 0, 1);
+          --color-cream-50: rgba(252, 252, 249, 1);
+          --color-cream-100: rgba(255, 255, 253, 1);
+          --color-gray-200: rgba(245, 245, 245, 1);
+          --color-gray-300: rgba(167, 169, 169, 1);
+          --color-gray-400: rgba(119, 124, 124, 1);
+          --color-slate-500: rgba(98, 108, 113, 1);
+          --color-brown-600: rgba(94, 82, 64, 1);
+          --color-charcoal-700: rgba(31, 33, 33, 1);
+          --color-charcoal-800: rgba(38, 40, 40, 1);
+          --color-slate-900: rgba(19, 52, 59, 1);
+          --color-teal-300: rgba(50, 184, 198, 1);
+          --color-teal-400: rgba(45, 166, 178, 1);
+          --color-teal-500: rgba(33, 128, 141, 1);
+          --color-teal-600: rgba(29, 116, 128, 1);
+          --color-teal-700: rgba(26, 104, 115, 1);
+          --color-teal-800: rgba(41, 150, 161, 1);
+          --color-red-400: rgba(255, 84, 89, 1);
+          --color-red-500: rgba(192, 21, 47, 1);
+          --color-orange-400: rgba(230, 129, 97, 1);
+          --color-orange-500: rgba(168, 75, 47, 1);
+        
+          /* RGB versions for opacity control */
+          --color-brown-600-rgb: 94, 82, 64;
+          --color-teal-500-rgb: 33, 128, 141;
+          --color-slate-900-rgb: 19, 52, 59;
+          --color-slate-500-rgb: 98, 108, 113;
+          --color-red-500-rgb: 192, 21, 47;
+          --color-red-400-rgb: 255, 84, 89;
+          --color-orange-500-rgb: 168, 75, 47;
+          --color-orange-400-rgb: 230, 129, 97;
+        
+          /* Background color tokens (Light Mode) */
+          --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
+          --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
+          --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
+          --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
+          --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
+          --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
+          --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
+          --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+        
+          /* Semantic Color Tokens (Light Mode) */
+          --color-background: var(--color-cream-50);
+          --color-surface: var(--color-cream-100);
+          --color-text: var(--color-slate-900);
+          --color-text-secondary: var(--color-slate-500);
+          --color-primary: var(--color-orange-500);
+          --color-primary-hover: rgba(168, 75, 47, 0.8);
+          --color-primary-active: rgba(168, 75, 47, 0.9);
+          --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+          --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+          --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+          --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+          --color-btn-primary-text: var(--color-cream-50);
+          --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+          --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+          --color-error: var(--color-red-500);
+          --color-success: var(--color-teal-500);
+          --color-warning: var(--color-orange-500);
+          --color-info: var(--color-slate-500);
+          --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+          --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+        
+          /* Custom colors for spice theme */
+          --color-spice-orange: #D2691E;
+          --color-spice-brown: #8B4513;
+          --color-spice-gold: #DAA520;
+          --color-spice-green: #228B22;
+        
+          /* Typography */
+          --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+            BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+            Monaco, Consolas, monospace;
+          --font-size-xs: 11px;
+          --font-size-sm: 12px;
+          --font-size-base: 14px;
+          --font-size-md: 14px;
+          --font-size-lg: 16px;
+          --font-size-xl: 18px;
+          --font-size-2xl: 20px;
+          --font-size-3xl: 24px;
+          --font-size-4xl: 30px;
+          --font-weight-normal: 400;
+          --font-weight-medium: 500;
+          --font-weight-semibold: 550;
+          --font-weight-bold: 600;
+          --line-height-tight: 1.2;
+          --line-height-normal: 1.5;
+          --letter-spacing-tight: -0.01em;
+        
+          /* Spacing */
+          --space-0: 0;
+          --space-1: 1px;
+          --space-2: 2px;
+          --space-4: 4px;
+          --space-6: 6px;
+          --space-8: 8px;
+          --space-10: 10px;
+          --space-12: 12px;
+          --space-16: 16px;
+          --space-20: 20px;
+          --space-24: 24px;
+          --space-32: 32px;
+          --space-40: 40px;
+          --space-48: 48px;
+          --space-64: 64px;
+        
+          /* Border Radius */
+          --radius-sm: 6px;
+          --radius-base: 8px;
+          --radius-md: 10px;
+          --radius-lg: 12px;
+          --radius-full: 9999px;
+        
+          /* Shadows */
+          --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+          --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+          --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+            0 2px 4px -1px rgba(0, 0, 0, 0.02);
+          --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+            0 4px 6px -2px rgba(0, 0, 0, 0.02);
+          --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+        
+          /* Animation */
+          --duration-fast: 150ms;
+          --duration-normal: 250ms;
+          --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        
+          /* Layout */
+          --container-sm: 640px;
+          --container-md: 768px;
+          --container-lg: 1024px;
+          --container-xl: 1280px;
+        }
+        
+        @font-face {
+          font-family: 'FKGroteskNeue';
+          src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+            format('woff2');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+        }
+        
+        body {
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: 0 var(--space-16);
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-16) 0;
+        }
+        
+        .logo {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-32);
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: var(--font-weight-medium);
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-bg-6), var(--color-bg-2));
+            padding: var(--space-64) 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-16);
+            color: var(--color-text);
+        }
+        
+        .hero p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-24) auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-btn-primary-text);
+            padding: var(--space-12) var(--space-32);
+            text-decoration: none;
+            border-radius: var(--radius-base);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: var(--space-64) 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-48);
+            color: var(--color-text);
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-24);
+            margin-top: var(--space-32);
+        }
+        
+        .product-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--duration-normal) var(--ease-standard);
+            border: 1px solid var(--color-card-border);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--color-bg-2);
+        }
+        
+        .product-info {
+            padding: var(--space-16);
+        }
+        
+        .product-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-8);
+            color: var(--color-text);
+        }
+        
+        .product-weight {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+        }
+        
+        .product-price {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            font-size: var(--font-size-lg);
+            line-height: 1.6;
+            margin-bottom: var(--space-24);
+            color: var(--color-text-secondary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-32);
+            margin-top: var(--space-40);
+        }
+        
+        .feature-item {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-bg-6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-16) auto;
+            font-size: var(--font-size-2xl);
+        }
+        
+        .feature-item h3 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-8);
+        }
+        
+        .feature-item p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--color-bg-6);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-content p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-24);
+            color: var(--color-text-secondary);
+        }
+        
+        .phone-number {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--space-16);
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+        
+        .phone-number:hover {
+            color: var(--color-primary-hover);
+        }
+        
+        .call-message {
+            background-color: var(--color-surface);
+            padding: var(--space-16) var(--space-24);
+            border-radius: var(--radius-base);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-slate-900);
+            color: var(--color-cream-50);
+            text-align: center;
+            padding: var(--space-32) 0;
+        }
+        
+        .footer p {
+            margin-bottom: var(--space-8);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-2xl);
+            cursor: pointer;
+            color: var(--color-text);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--space-16);
+            }
+            
+            .container {
+                padding: 0 var(--space-12);
+            }
+            
+            .section {
+                padding: var(--space-40) 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-24);
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">Jothi Masala</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn">☰</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Premium Authentic Indian Spices &amp; Masalas</h1>
+            <p>We bring you the finest quality traditional Indian spices and masalas, carefully sourced and ground to perfection for authentic taste in every dish.</p>
+            <a href="#products" class="cta-button">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Premium Products</h2>
+            <div class="products-grid">
+                <!-- Product Cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Jothi Masala</h2>
+            <div class="about-content">
+                <p>At Jothi Masala, we are passionate about bringing you the authentic flavors of traditional Indian cuisine. Our carefully curated selection of spices and masalas are sourced from the finest regions across India.</p>
+                <p>Every product is ground fresh to preserve the natural oils and flavors that make our spices exceptional. We believe in quality, authenticity, and the time-honored traditions that have made Indian cuisine beloved worldwide.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🌿</div>
+                        <h3>100% Natural</h3>
+                        <p>No artificial colors, preservatives, or additives. Pure, natural spices for authentic taste.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Premium Quality</h3>
+                        <p>Carefully selected and tested for the highest quality standards and freshness.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏠</div>
+                        <h3>Traditional Methods</h3>
+                        <p>Ground using traditional methods to preserve authentic flavors and aroma.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <div class="contact-content">
+                <p>Ready to experience the authentic taste of our premium spices? Contact us directly to place your order.</p>
+                <a href="tel:8072322105" class="phone-number">📞 8072322105</a>
+                <div class="call-message">
+                    <strong>Call to place your order</strong><br>
+                    We're here to help you choose the perfect spices for your kitchen!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Jothi Masala</strong> - Premium Authentic Indian Spices &amp; Masalas</p>
+            <p>Contact: 8072322105 | Call to place your order</p>
+            <p>&copy; 2024 Jothi Masala. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                name: "Curry Masala",
+                weight: "1 kg",
+                price: 600,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/987231b2-73ef-4d56-baf7-ae8214fa363d.png"
+            },
+            {
+                name: "Chicken Masala",
+                weight: "1 kg",
+                price: 600,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/8ecafba5-cf68-4a24-b7a5-f927e7bdb86b.png"
+            },
+            {
+                name: "Sambar Powder",
+                weight: "1 kg",
+                price: 400,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/e12619a4-c77c-4fa9-917e-ccdb7abe5938.png"
+            },
+            {
+                name: "Kootu Powder",
+                weight: "1 kg",
+                price: 400,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7dc8e523-f084-496e-b88a-c7215a9bdf2e.png"
+            },
+            {
+                name: "Daniya Powder",
+                weight: "1 kg",
+                price: 240,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ed68274d-7982-48d7-8738-7d8053665055.png"
+            },
+            {
+                name: "Biryani Masala",
+                weight: "1 kg",
+                price: 1200,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9bf5096f-9d64-426e-ae19-9af7b5585894.png"
+            },
+            {
+                name: "Idly Powder",
+                weight: "1 kg",
+                price: 400,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/d4529b3f-b551-48a1-89ba-7cdd313a253b.png"
+            },
+            {
+                name: "Paruppu Podi",
+                weight: "1 kg",
+                price: 400,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/749f73cd-8b97-434d-8263-f3f58b79cb24.png"
+            },
+            {
+                name: "Chilli Powder",
+                weight: "1 kg",
+                price: 280,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/835c7c13-fa63-4712-9625-9b2e3223aa65.png"
+            },
+            {
+                name: "Turmeric Powder",
+                weight: "1 kg",
+                price: 240,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/c79788ee-05aa-4a73-83cb-b7e909ade6c4.png"
+            },
+            {
+                name: "Rasam Powder",
+                weight: "1 kg",
+                price: 550,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/3050d8de-e07b-4a90-a97b-ac541c71bb01.png"
+            },
+            {
+                name: "Chicken 65/Kabab Masala",
+                weight: "1 kg",
+                price: 280,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/eefb84e5-dcb3-4b8a-9cf1-a5e342d43daa.png"
+            },
+            {
+                name: "Multigrain Health Mix",
+                weight: "1 kg",
+                price: 320,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ef40d282-5685-40a0-98bf-3ae0cc330aa3.png"
+            },
+            {
+                name: "Whole Wheat Atta",
+                weight: "1 kg",
+                price: 50,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9426660c-d86f-49cc-8a95-ee95a346f6d6.png"
+            },
+            {
+                name: "Ragi Flour",
+                weight: "1 kg",
+                price: 55,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/2a249029-70f5-4fc7-ad95-7827e6616b6b.png"
+            },
+            {
+                name: "Organic Thalippu Vadagam",
+                weight: "1 kg",
+                price: 450,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/aa60f8ee-28b6-421a-a4b2-e0fe1e3b9b92.png"
+            },
+            {
+                name: "Assam Tea",
+                weight: "1 kg",
+                price: 400,
+                image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9f9bc493-31d2-494f-8a3a-fcca90c18c78.png"
+            }
+        ];
+
+        // Generate product cards
+        function generateProductCards() {
+            const productsGrid = document.querySelector('.products-grid');
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-weight">${product.weight}</p>
+                        <p class="product-price">₹${product.price}</p>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function initSmoothScrolling() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                    if (navMenu.style.display === 'flex') {
+                        navMenu.style.flexDirection = 'column';
+                        navMenu.style.position = 'absolute';
+                        navMenu.style.top = '100%';
+                        navMenu.style.left = '0';
+                        navMenu.style.right = '0';
+                        navMenu.style.backgroundColor = 'var(--color-surface)';
+                        navMenu.style.boxShadow = 'var(--shadow-md)';
+                        navMenu.style.padding = 'var(--space-16)';
+                        navMenu.style.gap = 'var(--space-16)';
+                    }
+                });
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            generateProductCards();
+            initSmoothScrolling();
+            initMobileMenu();
+        });
+    </script>
+</body>
+</html>
